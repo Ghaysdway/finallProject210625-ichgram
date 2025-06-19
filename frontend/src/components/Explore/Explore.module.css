@@ -1,0 +1,316 @@
+.exploreContainer {
+    padding: 20px;
+    margin-left: 80px;
+}
+
+.exploreGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.postItem {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; 
+    height: 0;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #efefef;
+}
+
+.postMedia {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.postItem:hover .overlay {
+    opacity: 1;
+}
+
+.stats {
+    display: flex;
+    gap: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.stats span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.stats span.liked {
+    color: #ed4956;
+}
+
+.loading, .error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 1.2rem;
+}
+
+.videoPreviewContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.videoPreviewPlayer {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.videoPreviewPlayer > div {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.videoPreviewPlayer video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.videoPreviewPlayer .react-player__preview {
+  width: 100% !important;
+  height: 100% !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.videoElementPreview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.playIconOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.playIconOverlay svg {
+  fill: #ffffff;
+  width: 30px;
+  height: 30px;
+}
+
+@media (min-width: 1441px) {
+    .exploreContainer {
+        padding: 35px;
+        margin-left: 100px;
+    }
+
+    .exploreGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 35px;
+    }
+
+    .stats {
+        gap: 30px;
+        font-size: 20px;
+    }
+
+    .stats span {
+        gap: 10px;
+    }
+
+    .playIconOverlay {
+        width: 90px;
+        height: 90px;
+    }
+
+    .playIconOverlay svg {
+        width: 45px;
+        height: 45px;
+    }
+
+    .loading, .error {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 1440px) {
+    .exploreContainer {
+        padding: 30px;
+        margin-left: 90px;
+    }
+
+    .exploreGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .stats {
+        gap: 25px;
+        font-size: 18px;
+    }
+
+    .stats span {
+        gap: 8px;
+    }
+
+    .playIconOverlay {
+        width: 80px;
+        height: 80px;
+    }
+
+    .playIconOverlay svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .loading, .error {
+        font-size: 1.4rem;
+    }
+}
+@media (max-width: 1024px) {
+    .exploreContainer {
+        padding: 20px;
+        margin-left: 70px;
+    }
+
+    .exploreGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .stats {
+        gap: 20px;
+        font-size: 16px;
+    }
+
+    .stats span {
+        gap: 6px;
+    }
+
+    .playIconOverlay {
+        width: 60px;
+        height: 60px;
+    }
+
+    .playIconOverlay svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .loading, .error {
+        font-size: 1.2rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .exploreContainer {
+        padding: 15px;
+        margin-left: 60px;
+    }
+
+    .exploreGrid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 15px;
+    }
+
+    .stats {
+        gap: 18px;
+        font-size: 15px;
+    }
+
+    .stats span {
+        gap: 5px;
+    }
+
+    .playIconOverlay {
+        width: 50px;
+        height: 50px;
+    }
+
+    .playIconOverlay svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .loading, .error {
+        font-size: 1.1rem;
+    }
+}
+
+
+@media (max-width: 391px) {
+    .exploreContainer {
+        padding: 10px;
+        margin-left: 0;
+    }
+
+    .exploreGrid {
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0 auto;
+        gap: 10px;
+    }
+
+    .stats {
+        gap: 15px;
+        font-size: 14px;
+    }
+
+    .stats span {
+        gap: 4px;
+    }
+
+    .playIconOverlay {
+        width: 40px;
+        height: 40px;
+    }
+
+    .playIconOverlay svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .loading, .error {
+        font-size: 1rem;
+    }
+}

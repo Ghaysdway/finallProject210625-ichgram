@@ -1,0 +1,384 @@
+.exploreContainer {
+  padding: 20px;
+  max-width: 935px;
+  margin: 0 auto;
+  color: var(--text-primary);
+}
+
+.exploreTitle {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.postsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.postItem {
+  cursor: pointer;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background-color: var(--background-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  position: relative;
+}
+
+.postImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.postItem:hover .postImage {
+  transform: scale(1.05);
+}
+
+.noImage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-primary);
+}
+
+.loading,
+.error,
+.noPostsMessage {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 20px;
+  color: var(--text-secondary);
+}
+
+.error {
+  color: var(--text-error);
+}
+
+
+.videoPreviewContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.videoPreviewPlayer > div {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.videoPreviewPlayer video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.videoPreviewPlayer .react-player__preview {
+  width: 100% !important;
+  height: 100% !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.videoElementPreview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.playIconOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.playIconOverlay svg {
+  fill: #ffffff;
+  width: 30px;
+  height: 30px;
+}
+
+
+.postOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  color: #ffffff;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.postItem:hover .postOverlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.postStats {
+  display: flex;
+  gap: 20px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.postStats span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
+@media (min-width: 1441px) {
+  .exploreContainer {
+    padding: 35px;
+    max-width: 1800px;
+  }
+
+  .exploreTitle {
+    font-size: 2.5rem;
+    margin-bottom: 35px;
+  }
+
+  .postsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .postStats {
+    gap: 30px;
+    font-size: 20px;
+  }
+
+  .postStats span {
+    gap: 10px;
+  }
+
+  .playIconOverlay {
+    width: 90px;
+    height: 90px;
+  }
+
+  .playIconOverlay svg {
+    width: 45px;
+    height: 45px;
+  }
+
+  .loading,
+  .error,
+  .noPostsMessage {
+    font-size: 1.5rem;
+    padding: 35px;
+  }
+}
+@media (max-width: 1440px) {
+  .exploreContainer {
+    padding: 30px;
+    max-width: 1400px;
+  }
+
+  .exploreTitle {
+    font-size: 2.3rem;
+    margin-bottom: 30px;
+  }
+
+  .postsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+
+  .postStats {
+    gap: 25px;
+    font-size: 18px;
+  }
+
+  .postStats span {
+    gap: 8px;
+  }
+
+  .playIconOverlay {
+    width: 80px;
+    height: 80px;
+  }
+
+  .playIconOverlay svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .loading,
+  .error,
+  .noPostsMessage {
+    font-size: 1.4rem;
+    padding: 30px;
+  }
+}
+
+
+
+@media (max-width: 1024px) {
+  .exploreContainer {
+    padding: 20px;
+    max-width: 900px;
+  }
+
+  .exploreTitle {
+    font-size: 1.9rem;
+    margin-bottom: 20px;
+  }
+
+  .postsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .postStats {
+    gap: 20px;
+    font-size: 16px;
+  }
+
+  .postStats span {
+    gap: 6px;
+  }
+
+  .playIconOverlay {
+    width: 60px;
+    height: 60px;
+  }
+
+  .playIconOverlay svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .loading,
+  .error,
+  .noPostsMessage {
+    font-size: 1.2rem;
+    padding: 20px;
+  }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .exploreContainer {
+    padding: 15px;
+    max-width: 720px;
+  }
+
+  .exploreTitle {
+    font-size: 1.7rem;
+    margin-bottom: 18px;
+  }
+
+  .postsGrid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 12px;
+  }
+
+  .postStats {
+    gap: 18px;
+    font-size: 15px;
+  }
+
+  .postStats span {
+    gap: 5px;
+  }
+
+  .playIconOverlay {
+    width: 50px;
+    height: 50px;
+  }
+
+  .playIconOverlay svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .loading,
+  .error,
+  .noPostsMessage {
+    font-size: 1.1rem;
+    padding: 18px;
+  }
+}
+
+
+@media (max-width: 391px) {
+  .exploreContainer {
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  .exploreTitle {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .postsGrid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 8px;
+  }
+
+  .postStats {
+    gap: 15px;
+    font-size: 14px;
+  }
+
+  .postStats span {
+    gap: 4px;
+  }
+
+  .playIconOverlay {
+    width: 40px;
+    height: 40px;
+  }
+
+  .playIconOverlay svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .loading,
+  .error,
+  .noPostsMessage {
+    font-size: 1rem;
+    padding: 15px;
+  }
+}

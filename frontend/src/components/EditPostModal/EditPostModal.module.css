@@ -1,0 +1,337 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--overlay-background-standard);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050; 
+}
+
+.modalContent {
+  background: var(--background-secondary);
+  color: var(--text-primary);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.modalHeader h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.closeButton:hover {
+  color: var(--text-primary);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  min-height: 100px;
+  resize: vertical;
+  box-sizing: border-box;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.saveButton {
+  background-color: var(--accent-color);
+  color: var(--text-on-accent);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.saveButton:hover {
+  background-color: var(--accent-color-hover);
+}
+
+.saveButton:disabled {
+  background-color: var(--accent-color-disabled);
+  color: var(--text-secondary);
+  cursor: not-allowed;
+}
+
+.cancelButton {
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.cancelButton:hover {
+  background-color: var(--border-color);
+}
+
+.cancelButton:disabled {
+  background-color: var(--background-primary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.errorText {
+  color: var(--text-error);
+  font-size: 0.9rem;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+
+@media (min-width: 1441px) {
+  .modalContent {
+    width: 70%;
+    padding: 40px;
+    max-width: 600px;
+  }
+
+  .modalHeader h2 {
+    font-size: 1.8rem;
+  }
+
+  .closeButton {
+    font-size: 2rem;
+  }
+
+  .textarea {
+    font-size: 1.3rem;
+    padding: 18px;
+    min-height: 180px;
+  }
+
+  .button {
+    padding: 18px 36px;
+    font-size: 1.3rem;
+  }
+
+  .formActions {
+    gap: 18px;
+    margin-top: 40px;
+  }
+
+  .errorText {
+    font-size: 1.1rem;
+  }
+} 
+@media (max-width: 1440px) {
+  .modalContent {
+    width: 75%;
+    padding: 35px;
+    max-width: 550px;
+  }
+
+  .modalHeader h2 {
+    font-size: 1.6rem;
+  }
+
+  .closeButton {
+    font-size: 1.9rem;
+  }
+
+  .textarea {
+    font-size: 1.2rem;
+    padding: 16px;
+    min-height: 160px;
+  }
+
+  .button {
+    padding: 16px 32px;
+    font-size: 1.2rem;
+  }
+
+  .formActions {
+    gap: 16px;
+    margin-top: 35px;
+  }
+
+  .errorText {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 1024px) {
+  .modalContent {
+    width: 85%;
+    padding: 25px;
+    max-width: 450px;
+  }
+
+  .modalHeader h2 {
+    font-size: 1.4rem;
+  }
+
+  .closeButton {
+    font-size: 1.7rem;
+  }
+
+  .textarea {
+    font-size: 1rem;
+    padding: 12px;
+    min-height: 120px;
+  }
+
+  .button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+
+  .formActions {
+    gap: 12px;
+    margin-top: 25px;
+  }
+
+  .errorText {
+    font-size: 0.9rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .modalContent {
+    width: 90%;
+    padding: 20px;
+    max-width: 400px;
+  }
+
+  .modalHeader h2 {
+    font-size: 1.3rem;
+  }
+
+  .closeButton {
+    font-size: 1.6rem;
+  }
+
+  .textarea {
+    font-size: 0.95rem;
+    padding: 10px;
+    min-height: 100px;
+  }
+
+  .button {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+
+  .formActions {
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .errorText {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 391px) {
+  .modalContent {
+    width: 95%;
+    padding: 15px;
+    max-width: 350px;
+  }
+
+  .modalHeader h2 {
+    font-size: 1.2rem;
+  }
+
+  .closeButton {
+    font-size: 1.5rem;
+  }
+
+  .textarea {
+    font-size: 0.9rem;
+    padding: 8px;
+    min-height: 80px;
+  }
+
+  .button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .formActions {
+    gap: 8px;
+    margin-top: 15px;
+  }
+
+  .errorText {
+    font-size: 0.8rem;
+  }
+}

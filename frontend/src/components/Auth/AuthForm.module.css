@@ -1,0 +1,328 @@
+.authContainer {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: var(--background-primary);
+}
+
+.formContainer {
+  background-color: var(--background-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  padding: 20px 40px;
+  max-width: 400px;
+  width: 100%;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logoImage {
+  max-width: 175px;
+  height: auto;
+  filter: var(--logo-filter);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.inputGroup {
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  font-size: 14px;
+  background-color: var(--background-primary);
+  transition: border-color 0.3s ease;
+  color: var(--text-primary);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  background-color: var(--background-secondary);
+}
+
+.input.error {
+  border-color: var(--border-error);
+}
+
+.errorMessage {
+  color: var(--text-error);
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.passwordInput {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.showPasswordButton {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+.showPasswordButton:focus {
+  outline: none;
+}
+
+.submitButton {
+  background-color: var(--accent-color);
+  color: var(--text-on-accent);
+  border: none;
+  border-radius: 3px;
+  padding: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: var(--accent-color-hover);
+}
+
+.submitButton:disabled {
+  background-color: var(--accent-color-disabled);
+  color: var(--text-secondary);
+  cursor: not-allowed;
+}
+
+.alternativeAction {
+  background-color: var(--background-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  padding: 20px;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.alternativeAction p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.alternativeAction a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.alternativeAction a:hover {
+  color: var(--accent-color-hover);
+}
+
+.debugInfo {
+  background-color: var(--background-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  padding: 10px;
+  margin: 10px 0;
+  font-family: monospace;
+  font-size: 12px;
+  white-space: pre-wrap;
+  word-break: break-all;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.debugInfo pre {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+
+@media (min-width: 1441px) {
+  .imageBox {
+    min-width: 500px;
+    max-width: 600px;
+    height: 700px;
+  }
+
+  .formContainer {
+    max-width: 600px;
+    padding: 70px;
+  }
+  
+  .logoImage {
+    max-width: 300px;
+  }
+  
+  .input {
+    padding: 18px;
+    font-size: 18px;
+  }
+  
+  .submitButton {
+    padding: 18px;
+    font-size: 18px;
+  }
+  
+  .alternativeAction {
+    padding: 30px;
+  }
+  
+  .alternativeAction p {
+    font-size: 16px;
+  }
+  
+  .errorMessage {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .imageBox {
+    min-width: 450px;
+    max-width: 500px;
+    height: 600px;
+  }
+
+  .formContainer {
+    max-width: 500px;
+    padding: 60px;
+  }
+  
+  .logoImage {
+    max-width: 250px;
+  }
+  
+  .input {
+    padding: 15px;
+    font-size: 16px;
+  }
+  
+  .submitButton {
+    padding: 15px;
+    font-size: 16px;
+  }
+  
+  .alternativeAction {
+    padding: 25px;
+  }
+  
+  .alternativeAction p {
+    font-size: 15px;
+  }
+}
+@media (max-width: 1024px) {
+  .imageBox {
+    min-width: 350px;
+    max-width: 400px;
+    height: 500px;
+  }
+
+  .formContainer {
+    max-width: 400px;
+    padding: 40px;
+  }
+  
+  .logoImage {
+    max-width: 200px;
+  }
+  
+  .input {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .authContainer {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .imageBox {
+    min-width: 300px;
+    max-width: 350px;
+    height: 450px;
+    border-radius: 8px 0 0 8px;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+  .imagePreview {
+    border-radius: 8px 0 0 8px;
+  }
+
+  .formContainer {
+    max-width: 350px;
+    padding: 30px 40px;
+  }
+  
+  .logoImage {
+    max-width: 175px;
+  }
+  
+  .input {
+    font-size: 14px;
+    padding: 12px;
+  }
+  
+  .submitButton {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+
+@media (max-width: 391px) {
+  .authContainer {
+    flex-direction: column;
+  }
+
+  .imageBox {
+    min-width: 100%;
+    max-width: 100%;
+    height: 220px;
+    border-radius: 8px 8px 0 0;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .imagePreview {
+    border-radius: 8px 8px 0 0;
+  }
+
+  .formContainer {
+    max-width: 320px;
+    padding: 20px;
+  }
+  
+  .logoImage {
+    max-width: 150px;
+  }
+  
+  .input {
+    font-size: 16px;
+    padding: 10px;
+  }
+  
+  .submitButton {
+    padding: 10px;
+    font-size: 14px;
+  }
+}

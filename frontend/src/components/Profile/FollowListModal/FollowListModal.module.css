@@ -1,0 +1,514 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--overlay-background-standard, rgba(0, 0, 0, 0.6));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000; 
+}
+
+.modalContent {
+  background-color: var(--background-secondary);
+  color: var(--text-primary);
+  padding: 0;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  max-height: 70vh; 
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+  text-align: center; 
+  position: relative; 
+}
+
+.modalTitle {
+  margin: 0;
+  font-size: 1rem; 
+  font-weight: 600;
+  flex-grow: 1; 
+  text-align: center;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 0 8px; 
+  line-height: 1; 
+  position: absolute; 
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.searchInputContainer {
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.searchInput {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.userList {
+  overflow-y: auto; 
+  padding: 8px 0; 
+  flex-grow: 1; 
+}
+
+.userItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  transition: background-color 0.2s ease;
+}
+
+.userItem:hover {
+  background-color: var(--dropdown-hover-background); 
+}
+
+.userInfoLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit; 
+  flex-grow: 1;
+}
+
+.userAvatar {
+  width: 40px; 
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 12px;
+  object-fit: cover;
+}
+
+.userDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.fullName {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.followButton {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-left: 10px; 
+  flex-shrink: 0; 
+}
+
+.followingButton { 
+  background-color: var(--accent-color);
+  color: var(--text-on-accent);
+}
+
+.followingButton:hover {
+  background-color: #000d1a; 
+}
+
+.unfollowButton { 
+  background-color: var(--button-background); 
+  color: var(--button-text);
+  border: 1px solid var(--border-color);
+}
+
+.unfollowButton:hover {
+  background-color: #999999; 
+}
+
+.noUsersText {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+
+.loadingText {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.errorText {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--border-error, #dc3545); 
+  background-color: rgba(var(--border-error, 220, 53, 69), 0.1);
+  border-radius: 4px;
+  margin: 16px;
+  font-size: 1rem;
+}
+
+@media (min-width: 1441px) {
+  .modalContent {
+    width: 70%;
+    max-width: 460px;
+    max-height: 55vh;
+    border-radius: 18px;
+  }
+
+  .modalHeader {
+    padding: 20px 24px;
+  }
+
+  .modalTitle {
+    font-size: 1.4rem;
+  }
+
+  .closeButton {
+    font-size: 1.8rem;
+    padding: 0 16px;
+    right: 24px;
+  }
+
+  .searchInputContainer {
+    padding: 16px 24px;
+  }
+
+  .searchInput {
+    padding: 16px 20px;
+    font-size: 1.1rem;
+    border-radius: 16px;
+  }
+
+  .userItem {
+    padding: 16px 24px;
+  }
+
+  .userAvatar {
+    width: 52px;
+    height: 52px;
+    margin-right: 20px;
+  }
+
+  .username {
+    font-size: 1.1rem;
+  }
+
+  .fullName {
+    font-size: 0.95rem;
+  }
+
+  .followButton {
+    padding: 9px 20px;
+    font-size: 1rem;
+    border-radius: 9px;
+    margin-left: 18px;
+  }
+
+  .noUsersText,
+  .loadingText,
+  .errorText {
+    font-size: 1.1rem;
+    padding: 40px;
+  }
+} 
+
+@media (max-width: 1440px) {
+  .modalContent {
+    width: 75%;
+    max-width: 440px;
+    max-height: 60vh;
+    border-radius: 16px;
+  }
+
+  .modalHeader {
+    padding: 18px 22px;
+  }
+
+  .modalTitle {
+    font-size: 1.3rem;
+  }
+
+  .closeButton {
+    font-size: 1.7rem;
+    padding: 0 14px;
+    right: 22px;
+  }
+
+  .searchInputContainer {
+    padding: 14px 22px;
+  }
+
+  .searchInput {
+    padding: 14px 18px;
+    font-size: 1rem;
+    border-radius: 14px;
+  }
+
+  .userItem {
+    padding: 14px 22px;
+  }
+
+  .userAvatar {
+    width: 48px;
+    height: 48px;
+    margin-right: 18px;
+  }
+
+  .username {
+    font-size: 1rem;
+  }
+
+  .fullName {
+    font-size: 0.9rem;
+  }
+
+  .followButton {
+    padding: 8px 18px;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    margin-left: 16px;
+  }
+
+  .noUsersText,
+  .loadingText,
+  .errorText {
+    font-size: 1rem;
+    padding: 35px;
+  }
+}
+
+
+
+@media (max-width: 1024px) {
+  .modalContent {
+    width: 85%;
+    max-width: 400px;
+    max-height: 70vh;
+    border-radius: 12px;
+  }
+
+  .modalHeader {
+    padding: 14px 18px;
+  }
+
+  .modalTitle {
+    font-size: 1.1rem;
+  }
+
+  .closeButton {
+    font-size: 1.5rem;
+    padding: 0 10px;
+    right: 18px;
+  }
+
+  .searchInputContainer {
+    padding: 10px 18px;
+  }
+
+  .searchInput {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+  }
+
+  .userItem {
+    padding: 10px 18px;
+  }
+
+  .userAvatar {
+    width: 40px;
+    height: 40px;
+    margin-right: 14px;
+  }
+
+  .username {
+    font-size: 0.9rem;
+  }
+
+  .fullName {
+    font-size: 0.8rem;
+  }
+
+  .followButton {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    margin-left: 12px;
+  }
+
+  .noUsersText,
+  .loadingText,
+  .errorText {
+    font-size: 0.9rem;
+    padding: 25px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .modalContent {
+    width: 90%;
+    max-width: 380px;
+    max-height: 75vh;
+    border-radius: 10px;
+  }
+
+  .modalHeader {
+    padding: 12px 16px;
+  }
+
+  .modalTitle {
+    font-size: 1rem;
+  }
+
+  .closeButton {
+    font-size: 1.4rem;
+    padding: 0 8px;
+    right: 16px;
+  }
+
+  .searchInputContainer {
+    padding: 8px 16px;
+  }
+
+  .searchInput {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    border-radius: 8px;
+  }
+
+  .userItem {
+    padding: 8px 16px;
+  }
+
+  .userAvatar {
+    width: 36px;
+    height: 36px;
+    margin-right: 12px;
+  }
+
+  .username {
+    font-size: 0.85rem;
+  }
+
+  .fullName {
+    font-size: 0.75rem;
+  }
+
+  .followButton {
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+
+  .noUsersText,
+  .loadingText,
+  .errorText {
+    font-size: 0.85rem;
+    padding: 20px;
+  }
+}
+
+
+@media (max-width: 391px) {
+  .modalContent {
+    width: 95%;
+    max-width: 350px;
+    max-height: 80vh;
+    border-radius: 8px;
+  }
+
+  .modalHeader {
+    padding: 10px 14px;
+  }
+
+  .modalTitle {
+    font-size: 0.9rem;
+  }
+
+  .closeButton {
+    font-size: 1.3rem;
+    padding: 0 6px;
+    right: 14px;
+  }
+
+  .searchInputContainer {
+    padding: 6px 14px;
+  }
+
+  .searchInput {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+    border-radius: 6px;
+  }
+
+  .userItem {
+    padding: 6px 14px;
+  }
+
+  .userAvatar {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+  }
+
+  .username {
+    font-size: 0.8rem;
+  }
+
+  .fullName {
+    font-size: 0.7rem;
+  }
+
+  .followButton {
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    margin-left: 8px;
+  }
+
+  .noUsersText,
+  .loadingText,
+  .errorText {
+    font-size: 0.8rem;
+    padding: 15px;
+  }
+}
