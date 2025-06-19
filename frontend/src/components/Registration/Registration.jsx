@@ -157,6 +157,7 @@ const Registration = () => {
   };
 
   return (
+    
     <div className={styles.authContainer}>
       <div className={styles.imageBox}>
         <img src={backgroundImg} alt="Preview" className={styles.imagePreview} />
@@ -270,14 +271,16 @@ const Registration = () => {
             {isLoading ? 'Регистрация...' : 'Зарегистрироваться'}
           </button>
         </form>
-      </div>
-
-      <div className={styles.alternativeAction}>
+        <div className={styles.alternativeAction}>
         <p>
           Есть аккаунт? <Link to="/login">Войти</Link>
         </p>
       </div>
+      </div>
+
+      
     </div>
+    
   );
 };
 
